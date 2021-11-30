@@ -224,7 +224,7 @@ function criarLista(){
         criarItem.className = 'criar-item';
         
         let a = document.createElement('a')
-        a.href = `./userpage.html?${e.userName}`;
+        a.href = `./public/userpage.html?${e.userName}`;
 
         let criarBotao = document.createElement('button')
         criarBotao.innerText = 'Visualizar'
