@@ -11,10 +11,15 @@ button.innerText = 'Cadastro';
 let container = document.createElement('div');
 container.className = 'container';
 
+
 container.appendChild(button);
 
 java.appendChild(container);
 
+let inputFiltro = document.createElement('input');
+inputFiltro.type = 'text';
+inputFiltro.className = 'input-filtro'
+java.appendChild(inputFiltro)
 
 
 button.addEventListener('click', function(){
@@ -236,4 +241,22 @@ function criarLista(){
     criarLista();
 
 
+    let input, filter, ol, li, i, txtValue;
+    input = document.querySelector('input');
+    filter = input.value.toUpperCase();
+    ol = document.querySelector('ol');
+    li = li.querySelector('li');
 
+inputFiltro.addEventListener('keyup',function(){
+      
+        for (i = 0; i < li.length; i++) {
+          a = li[i].getElementsByTagName("a")[0];
+          txtValue = a.textContent || a.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+          } else {
+            li[i].style.display = "none";
+          }
+        }
+      
+})
