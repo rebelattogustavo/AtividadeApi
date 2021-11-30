@@ -224,7 +224,7 @@ function criarLista(){
         criarItem.className = 'criar-item';
         
         let a = document.createElement('a')
-        a.href = `./UserPage/userpage.html?${e.userName}`;
+        a.href = `./userpage.html?${e.userName}`;
 
         let criarBotao = document.createElement('button')
         criarBotao.innerText = 'Visualizar'
@@ -233,26 +233,24 @@ function criarLista(){
 
         criarItem.innerText = e.name + ' --> ' + 'username: ' + e.userName;
         criarListaUsers.appendChild(criarItem);
-        criarListaUsers.appendChild(a);
+        criarItem.appendChild(a);
     });
     document.body.appendChild(criarListaUsers)
 }
 
     criarLista();
 
-
+    
     let input, filter, ol, li, i, txtValue;
     input = document.querySelector('input');
-    filter = input.value.toUpperCase();
     ol = document.querySelector('ol');
-    li = li.querySelector('li');
+    li = ol.getElementsByTagName('li');
 
 inputFiltro.addEventListener('keyup',function(){
-      
-        for (i = 0; i < li.length; i++) {
-          a = li[i].getElementsByTagName("a")[0];
-          txtValue = a.textContent || a.innerText;
-          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+    for (i = 0; i < li.length; i++) {
+        txtValue = usersList[i].name
+
+          if (txtValue.toUpperCase().indexOf(input.value.toUpperCase()) > -1) {
             li[i].style.display = "";
           } else {
             li[i].style.display = "none";
