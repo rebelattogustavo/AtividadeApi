@@ -4,7 +4,7 @@ let tirar = document.location.search
 tirar = tirar.substring(1)
 
 
-fetch('https://fake-github.herokuapp.com/api/search/' + tirar)
+fetch('https://fake-github2.herokuapp.com/api/search/' + tirar)
     .then(function(resultado){
         resultado.json().then(function (data) {
             console.log(`Data:`, data);
@@ -25,7 +25,7 @@ fetch('https://fake-github.herokuapp.com/api/search/' + tirar)
         console.log(`Erro:`, erro);
     });
 
-fetch('https://fake-github.herokuapp.com/api/search/' + tirar + '/repos')
+fetch('https://fake-github2.herokuapp.com/api/search/' + tirar + '/repos')
     .then(function(resultado2){
         resultado2.json().then(function (repos) {
             console.log(`Data2:`, repos);
