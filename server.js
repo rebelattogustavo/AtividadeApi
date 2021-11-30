@@ -10,6 +10,6 @@ const port = process.env.PORT || 8080;
 app.get('/', function(requisicao, resposta) {
   resposta.sendFile(path.join(__dirname, '/index.html'));
 });
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/Public'));
 app.listen(port);
 console.log('Server started at http://localhost:' + port);
